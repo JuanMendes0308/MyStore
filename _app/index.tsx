@@ -4,9 +4,9 @@ import {router} from "expo-router";
 
 export default function Index() {
     function handleEntrar() {
-        // router.replace("/tela2");
+        router.replace("/tela2");
         // não mantem histórico de navegação
-        router.push("/home");
+        router.push("/tela2");
         // mantem histórico de navegação
     }
 
