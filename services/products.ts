@@ -1,14 +1,15 @@
-import {data} from '../data/dados';
-
+import { data } from "../data/dados";
+ 
+export function getProductsById(id: number) {
+  return data.products.find(
+    (product) => product.id === id
+  );
+}
 export function getAllProducts() {
-    return data.products;
+  return data.products;
 }
-
-export function getProductsById(pId: number) {
-    return data.products.find(item=>item.id === pId);
+export function getProductsByCategory(idCategory: number) {
+  return data.products.filter(
+    (product) => product.idCategory === idCategory
+  );
 }
-
-export function getProductsByCategory(pIdCategory: number) {
-    return data.products.filter(item=>item.idCategory === pIdCategory);
-}
-
