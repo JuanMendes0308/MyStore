@@ -3,6 +3,7 @@ import React from 'react';
 import {Button} from '../../componentes/button/button';
 import {router, useLocalSearchParams} from 'expo-router';
 import {getProductsById} from '../../services/products';
+import { Stack } from 'expo-router';
 
 export default function ProductScreen() {
     const {id} = useLocalSearchParams();
@@ -21,6 +22,13 @@ export default function ProductScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Stack.Screen
+        options={{
+          headerShown: true,
+          title: "Detalhes do Produto",
+          headerBackTitle: "Voltar",
+        }}
+      />
             <ScrollView style={styles.productArea} contentContainerStyle={{justifyContent: 'center', alignItems: 'center', gap: 16}}>
                 <Image source={{uri: product.image}} style={styles.image} resizeMode="cover" />
                 <View style={styles.detailsArea}>
